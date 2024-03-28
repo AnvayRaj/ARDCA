@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Report</title>
+    <!-- CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            /* position: fixed; */
+            bottom: 0;
+            width: 100%;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            vertical-align: top;
+        }
+        /* Invisible borders */
+        table {
+            border: none;
+        }
+        td, th {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Analysis Report</h1>
+    </header>
+    <section id="info">
+        <table>
+            <tbody>
+                <tr>
+                    <th>Video Title</td>
+                    <td>{{info["video_title"]}}</td>
+                </tr>
+                <tr>
+                    <th>Duration</td>
+                    <td>{{info["duration"]}} sec</td>
+                </tr>
+                <tr>
+                    <th>Thumbnail:</td>
+                    <td><img src="/static/thumbnail.jpeg" alt="" width="200"></td>
+                </tr>
+                <!-- <tr>
+                    <th>Column 3</td>
+                    <td>Data 3</td>
+                </tr> -->
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </section>
+    <section id="charts">
+        <h2>Charts</h2>
+        <!-- Insert your charts here -->
+        <div id="chart1">
+            <!-- Placeholder for Chart 1 -->
+            <img src="/static/axvspan.jpg" alt="axvspan" width="50%">
+            <img src="/static/pareto.jpg" alt="pareto" width="40%">
+        </div>
+        <div id="chart2">
+            <!-- Placeholder for Chart 2 -->
+            
+        </div>
+    </section>
+    <section id="insights">
+        <h2>Insights</h2>
+        <ul>
+            <li><p>The emotional tone of the video as inferred from the reactions is {{info["emotional_tone"][0]}}, {{info["emotional_tone"][1]}} and {{info["emotional_tone"][2]}}.</p></li>
+            <li><p>The engagement for this Ad is {{info["engagement_score"]}}.</p></li>
+        </ul>
+    </section>
+    <footer>
+        <footer>
+            <button onclick="printPage()">Print and Save</button>
+            <p>Generated on: {{info["time_stamp"]}}</p>
+        </footer>
+        <script>
+            function printPage() {
+                window.print();
+            }
+        </script>
+    </footer>
+</body>
+</html>
